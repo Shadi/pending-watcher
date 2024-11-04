@@ -37,9 +37,8 @@ kubectl apply -f https://raw.githubusercontent.com/Shadi/pending-watcher/refs/he
 It will use inCluster config instead of KUBECONFIG env var when its not available.
 
 I originally used this by running it in my machine to quickly finding pending pods and clearing resources on the node
-they are pending on, but it I found a use case where this can be helpful to continuously watching and logging pods pending in the cluster
-so that I can quickly catch logs collector pod being stuck pending on a node and only realizing that when trying to find 
-logs for a problematic app that had no logs, only to realize that the logs collector was pending on the node that had
+they are pending on, but it I found a use case where this can be helpful to continuously watch and log pods pending in the cluster
+so that I can quickly catch logs collector pod being stuck pending on a node, instead of only realizing that the logs collector was pending on the node that had
 a pod of that app, so deploying this to the cluster and creating an alert on `Pod pending for more than` log events helped
 catching that early.
 
