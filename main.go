@@ -58,6 +58,7 @@ func checkPendingPods(clientset *kubernetes.Clientset) {
 	pods, err := clientset.CoreV1().Pods("").List(context.TODO(), options)
 	if err != nil {
 		log.Err(err).Msg("Error getting pods")
+		return
 	}
 	now := time.Now()
 	for _, pod := range pods.Items {
