@@ -1,5 +1,5 @@
 # pending-watcher
-Small package to find and log pods that has been pending in a kubernetes cluster for more than 2 minutes
+Small package to find and log pods that has been pending in a kubernetes cluster for more than 2 minutes, and in case of daemonset pending pods, it will log the node they are trying to be scheduled on
 
 This should help in finding pods that stay pending on some nodes because of resources constraint or any other reasons,
 I originally created this to find daemonset pods that don't get deployed correctly to all nodes when its updated, so
